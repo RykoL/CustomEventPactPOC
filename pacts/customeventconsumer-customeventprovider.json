@@ -1,0 +1,51 @@
+{
+  "consumer": {
+    "name": "CustomEventConsumer"
+  },
+  "provider": {
+    "name": "CustomEventProvider"
+  },
+  "messages": [
+    {
+      "description": "an custom event",
+      "providerStates": [
+
+      ],
+      "contents": {
+        "name": "foo",
+        "year": 2021,
+        "id": 1
+      },
+      "matchingRules": {
+        "body": {
+          "$.name": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.year": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          },
+          "$.id": {
+            "matchers": [
+              {
+                "match": "type"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  }
+}
